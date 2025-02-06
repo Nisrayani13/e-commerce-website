@@ -1,4 +1,5 @@
 import Footer from "./components/Footer";
+import MainBody from "./components/MainBody";
 import Navbar from "./components/Navbar";
 export default function Home() {
   return (
@@ -6,8 +7,10 @@ export default function Home() {
       <div className="min-w-full">
         <Navbar></Navbar>
       </div>
-      {/* <div className="flex-1 pt-30 md:pt-16">Main body</div>
-      <Footer></Footer> */}
+      <div className="flex-1 pt-20 md:pt-20">
+        <MainBody></MainBody>
+      </div>
+      <Footer></Footer>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import { Search, User, ShoppingCart, X } from "lucide-react";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Menu } from "lucide-react";
 
@@ -20,7 +20,7 @@ export default function Navbar() {
   if (!isMounted) return <div>Loading....</div>;
 
   return (
-    <nav className="fixed top-0 left-0 z-10 w-full flex justify-between items-center px-8 py-3 border-b shadow-sm text-sm md:text-base">
+    <nav className="fixed top-0 left-0 z-10 w-full h-20 flex justify-between items-center px-8 py-3 bg-white border-b shadow-sm text-sm md:text-base">
       {/* Left */}
       <div className="flex justify-between items-center gap-6">
         <div className="font-bold text-4xl">JSX</div>
@@ -79,11 +79,14 @@ const LoginCompos = ({isMobile}:any) => {
 };
 
 const SearchCompos = ({isMobile}:any) => {
+  const inputRef=useRef<HTMLInputElement>(null);
   return (
-    <div className="flex justify-between items-center gap-3">
+    <button className="flex justify-between items-center gap-3" onClick={()=>{
+      if(inputRef.current)inputRef.current.focus()
+    }}>
       <Search></Search>
-      <input type="text" placeholder="Search" className={`${isMobile?"text-xl":"text-base"}`}/>
-    </div>
+      <input ref={inputRef} type="text" placeholder="Search" className={`w-full rounded-lg ${isMobile?"text-xl p-1.5":"text-base p-1.5"}`}/>
+    </button>
   );
 };
 
