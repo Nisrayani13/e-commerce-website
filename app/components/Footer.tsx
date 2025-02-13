@@ -8,9 +8,10 @@ export default function Footer() {
         <div>
           <div className="font-semibold mb-3">Shop</div>
           <ul>
-            <li className="pb-1">Home & Living</li>
-            <li className="pb-1">Accessories</li>
-            <li className="pb-1">Stationery</li>
+            <li className="pb-1">Shop All</li>
+            <li className="pb-1">Our Story </li>
+            <li className="pb-1">Our Craft</li>
+            <li className="pb-1">Contact</li>
           </ul>
         </div>
         <div>
@@ -43,7 +44,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="flex justify-center text-xs italic pb-1.5 pt-0.5 border-t border-slate-300">
-        &copy; 2024 Nisrayani Raj. All rights reserved.
+        &copy; 2024 Nisrayani Raj. All rights reserved. Credits: adalene wix template
       </div>
     </footer>
   );

@@ -4,6 +4,7 @@ import { Search, User, ShoppingCart, X } from "lucide-react";
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Menu } from "lucide-react";
+import Topbar from "./Topbar";
 
 export default function Navbar() {
   const [isMounted, setIsMounted] = useState(false);
@@ -20,10 +21,12 @@ export default function Navbar() {
   if (!isMounted) return <div>Loading....</div>;
 
   return (
-    <nav className="fixed top-0 left-0 z-10 w-full h-20 flex justify-between items-center px-8 py-3 bg-white border-b shadow-sm text-sm md:text-base">
-      {/* Left */}
+    <div className="fixed top-0 left-0 z-10 w-full h-20">
+      <Topbar></Topbar>
+      <div className="flex justify-between items-center px-8 py-4 bg-white border-b shadow-sm text-sm md:text-base">
+        {/* Left */}
       <div className="flex justify-between items-center gap-6">
-        <div className="font-bold text-4xl">JSX</div>
+        <div className="font-bold text-4xl">SNR</div>
         <div className="hidden md:flex">
           <SearchCompos isMobile={false}></SearchCompos>
         </div>
@@ -55,16 +58,19 @@ export default function Navbar() {
           </div>
         )}
       </div>
-    </nav>
+      </div>
+    </div>
   );
 }
 
 const Navlinks = ({isMobile}:any) => {
   return (
     <>
-      <Link href="/" className={`${isMobile?"text-xl":"text-base"}`}>Home & Living</Link>
-      <Link href="/accesories" className={`${isMobile?"text-xl":"text-base"}`}>Accesories</Link>
+      <Link href="/shopall">Shop All</Link>
+      <Link href="/homeAndLiving" className={`${isMobile?"text-xl":"text-base"}`}> Home & Living</Link>
+      <Link href="/accessories" className={`${isMobile?"text-xl":"text-base"}`}>Accessories</Link>
       <Link href="/stationery" className={`${isMobile?"text-xl":"text-base"}`}>Stationery</Link>
+      <Link href="/story" className={`${isMobile?"text-xl":"text-base"}`}>Our Story</Link>
     </>
   );
 };

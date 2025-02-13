@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 import daisyui from "daisyui"
+import { url } from "inspector";
 
 export default {
   content: [
@@ -12,8 +13,12 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        footerBackground: "rgb(241,228,184)"
+        footerBackground: "rgb(241,228,184)",
+        topbarBackground:"rgb(234,225,245)"
       },
+      backgroundImage:{
+        'lady-with-bag': "url('/lady_with_bag.png')"
+      }
     },
   },
   plugins: [
